@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
@@ -20,6 +20,8 @@ spec:
       containers:
         - name: master
           image: chrislusf/gleam
+          # image: gleam:local
+          # imagePullPolicy: Never
           ports:
             - containerPort: 45326
               protocol: TCP
