@@ -6,10 +6,11 @@ import (
 	"time"
 
 	"context"
+
 	"github.com/chrislusf/gleam/pb"
 	"github.com/chrislusf/gleam/util"
-	"github.com/golang/protobuf/proto"
 	"google.golang.org/grpc"
+	"google.golang.org/protobuf/proto"
 )
 
 func (as *AgentServer) heartbeat() {

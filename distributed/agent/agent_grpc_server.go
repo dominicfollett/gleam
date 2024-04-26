@@ -10,6 +10,7 @@ import (
 	"path/filepath"
 
 	"context"
+
 	"github.com/chrislusf/gleam/distributed/resource"
 	"github.com/chrislusf/gleam/pb"
 	"google.golang.org/grpc"
@@ -39,7 +40,7 @@ func (as *AgentServer) SendFileResource(stream pb.GleamAgent_SendFileResourceSer
 		hasSameHash = toFileHash.Hash == request.GetHash()
 	}
 
-	if err := stream.Send(&pb.FileResourceResponse{hasSameHash, true}); err != nil {
+	if err := stream.Send(&pb.FileResourceResponse{AlreadyExists: hasSameHash, Ok: true}); err != nil {
 		return err
 	}
 
@@ -70,7 +71,7 @@ func (as *AgentServer) SendFileResource(stream pb.GleamAgent_SendFileResourceSer
 	}
 
 	// ack
-	if err := stream.Send(&pb.FileResourceResponse{hasSameHash, true}); err != nil {
+	if err := stream.Send(&pb.FileResourceResponse{AlreadyExists: hasSameHash, Ok: true}); err != nil {
 		return err
 	}
 

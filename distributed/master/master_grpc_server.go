@@ -11,9 +11,10 @@ import (
 	"time"
 
 	"context"
+
 	"github.com/chrislusf/gleam/pb"
-	"github.com/golang/protobuf/proto"
-	"github.com/hashicorp/golang-lru"
+	lru "github.com/hashicorp/golang-lru"
+	"google.golang.org/protobuf/proto"
 )
 
 type MasterServer struct {
@@ -21,6 +22,7 @@ type MasterServer struct {
 	statusCache  *lru.Cache
 	logDirectory string
 	startTime    time.Time
+	pb.UnimplementedGleamMasterServer
 }
 
 func newMasterServer(logDirectory string) *MasterServer {

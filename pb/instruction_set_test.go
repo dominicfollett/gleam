@@ -3,7 +3,7 @@ package pb
 import (
 	"testing"
 
-	"github.com/golang/protobuf/proto"
+	"google.golang.org/protobuf/proto"
 )
 
 func TestEncodingDecoding(t *testing.T) {

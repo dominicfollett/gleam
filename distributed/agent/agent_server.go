@@ -15,7 +15,7 @@ import (
 
 	"github.com/chrislusf/gleam/pb"
 	"github.com/chrislusf/gleam/util"
-	"github.com/golang/protobuf/proto"
+	"google.golang.org/protobuf/proto"
 )
 
 type AgentServerOption struct {
@@ -41,6 +41,7 @@ type AgentServer struct {
 	storageBackend          *LocalDatasetShardsManager
 	inMemoryChannels        *LocalDatasetShardsManagerInMemory
 	receiveFileResourceLock sync.Mutex
+	pb.UnimplementedGleamAgentServer
 }
 
 func RunAgentServer(option *AgentServerOption) {

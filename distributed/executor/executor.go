@@ -30,6 +30,7 @@ type Executor struct {
 	instructions *pb.InstructionSet
 	stats        []*pb.InstructionStat
 	grpcAddress  string
+	pb.UnimplementedGleamExecutorServer
 }
 
 func NewExecutor(option *ExecutorOption, instructions *pb.InstructionSet) *Executor {

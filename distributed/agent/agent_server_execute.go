@@ -10,8 +10,8 @@ import (
 	"syscall"
 
 	"github.com/chrislusf/gleam/pb"
-	"github.com/golang/protobuf/proto"
 	"github.com/kardianos/osext"
+	"google.golang.org/protobuf/proto"
 )
 
 func (as *AgentServer) executeCommand(
