@@ -19,9 +19,9 @@ spec:
     spec:
       containers:
         - name: master
-          image: chrislusf/gleam
-          # image: gleam:local
-          # imagePullPolicy: Never
+          # image: chrislusf/gleam
+          image: gleam:local
+          imagePullPolicy: Never
           ports:
             - containerPort: 45326
               protocol: TCP

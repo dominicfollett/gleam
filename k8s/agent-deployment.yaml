@@ -22,9 +22,9 @@ spec:
     spec:
       containers:
         - name: agent
-          image: chrislusf/gleam
-          # image: gleam:local
-          # imagePullPolicy: Never
+          # image: chrislusf/gleam
+          image: gleam:local
+          imagePullPolicy: Never
           ports:
             - containerPort: 45327
               protocol: TCP
